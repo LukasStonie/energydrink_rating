@@ -10,7 +10,7 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /workspace
 
 # Install uv
-RUN pip install --no-cache-dir uv==${UV_VERSION}
+RUN pip install uv==${UV_VERSION}
 
 # Install additional system dependencies
 RUN rm -f /etc/apt/sources.list.d/yarn.list \
