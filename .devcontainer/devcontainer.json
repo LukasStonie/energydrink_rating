@@ -17,6 +17,9 @@
     // // Optional: Keeps common utilities
     // "ghcr.io/devcontainers/features/common-utils:2": {}
   },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
   // Configure tool-specific properties
   "customizations": {
     "vscode": {
