@@ -30,7 +30,7 @@ class Drink(Base):
     __tablename__ = 'drinks'
     id = Column(Integer, primary_key=True, autoincrement=True)
     brand = Column(String)
-    flavor = Column(String)
+    name = Column(String)
     type_id = Column(Integer, ForeignKey('drink_types.id'))
 
     drink_type = relationship("DrinkType", back_populates="drinks")

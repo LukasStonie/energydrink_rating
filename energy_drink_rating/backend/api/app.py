@@ -5,7 +5,7 @@ app = FastAPI()
 
 # Include all your modular routers
 app.include_router(CombRouter.router)
-# app.include_router(DrinkRouter.router)
+app.include_router(DrinkRouter.router)
 
 
 @app.get("/")

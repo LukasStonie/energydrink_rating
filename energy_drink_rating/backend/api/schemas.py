@@ -4,12 +4,13 @@ from pydantic import BaseModel
 
 
 # --- DRINK SCHEMAS ---
-class DrinkBase(BaseModel):
+class DrinkCreate(BaseModel):
+    name: str
     brand: str
-    flavor: str
+    type_id: int  # Remember the 'type' we discussed earlier
 
 
-class Drink(DrinkBase):
+class Drink(DrinkCreate):
     id: int
 
     class Config:

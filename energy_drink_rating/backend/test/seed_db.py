@@ -18,9 +18,9 @@ def seed_database():
     session.commit()  # Commit to get IDs for the types
 
     # 3. Create individual Drinks
-    cola = Drink(brand="Coca-Cola", flavor="Classic", drink_type=soda)
-    cherry = Drink(brand="Generic", flavor="Cherry Syrup", drink_type=soda)
-    orange = Drink(brand="Tropicana", flavor="Orange", drink_type=juice)
+    cola = Drink(brand="Coca-Cola", name="Classic", drink_type=soda)
+    cherry = Drink(brand="Generic", name="Cherry Syrup", drink_type=soda)
+    orange = Drink(brand="Tropicana", name="Orange", drink_type=juice)
     session.add_all([cola, cherry, orange])
 
     # 4. Create a User

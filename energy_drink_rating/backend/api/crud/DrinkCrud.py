@@ -12,9 +12,9 @@ def get_drinks(db: Session, skip: int = 0, limit: int = 100):
     return db.query(DrinkModel).offset(skip).limit(limit).all()
 
 
-def create_drink(db: Session, drink: schemas.DrinkCreate):
-    db_drink = DrinkModel(name=drink.name, description=drink.description,
-                          flavor=drink.flavor, type_id=drink.type_id)
+def create_drink(db: Session, drink: schemas.Drink):
+    db_drink = DrinkModel(name=drink.name, brand=drink.brand,
+                          type_id=drink.type_id)
     db.add(db_drink)
     db.commit()
     db.refresh(db_drink)
