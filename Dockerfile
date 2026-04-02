@@ -66,6 +66,7 @@ RUN rm -f /etc/apt/sources.list.d/yarn.list \
     && apt-get -y install --no-install-recommends \
         git \
         curl \
+        sqlite3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

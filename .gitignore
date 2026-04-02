@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Don't ignore Python files and .env files (including in subdirectories)
+!*.py
+!*.env
+!*.env_secrets_example
+!.gitignore
+!*.json
+!*/
+
