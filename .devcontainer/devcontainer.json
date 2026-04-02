@@ -52,5 +52,9 @@
   "runArgs": [
     // "--gpus",
     // "all"
+    "--env-file",
+    "${localWorkspaceFolder}/.devcontainer/.env_secrets",
+    "--env-file",
+    "${localWorkspaceFolder}/.devcontainer/.env"
   ]
 }
