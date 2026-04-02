@@ -31,14 +31,14 @@ class Drink(DrinkCreate):
 # --- REVIEW SCHEMAS ---
 
 
-class ReviewBase(BaseModel):
+class ReviewCreate(BaseModel):
     rating: int
     comment: Optional[str] = None
     user_id: int
     comb_id: int
 
 
-class Review(ReviewBase):
+class Review(ReviewCreate):
     id: int
 
     class Config:
@@ -59,6 +59,21 @@ class Comb(CombBase):
     id: int
     drinks: List[Drink] = []
     reviews: List[Review] = []
+
+    class Config:
+        from_attributes = True
+
+
+class UserBase(BaseModel):
+    username: str
+
+
+class UserCreate(UserBase):
+    password: str  # This is the plain text password from the user
+
+
+class User(UserBase):
+    id: int
 
     class Config:
         from_attributes = True
