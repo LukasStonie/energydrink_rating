@@ -1,5 +1,4 @@
 from backend.api import schemas
-from backend.dataLayer.Models import Comb as CombModel
 from backend.dataLayer.Models import Drink as DrinkModel
 from sqlalchemy.orm import Session
 

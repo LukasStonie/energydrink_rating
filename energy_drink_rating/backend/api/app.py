@@ -1,11 +1,12 @@
 from fastapi import FastAPI
-from routers import CombRouter, DrinkRouter
+from routers import CombRouter, DrinkRouter, DrinkTypeRouter
 
 app = FastAPI()
 
 # Include all your modular routers
 app.include_router(CombRouter.router)
 app.include_router(DrinkRouter.router)
+app.include_router(DrinkTypeRouter.router)
 
 
 @app.get("/")

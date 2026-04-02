@@ -3,7 +3,19 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 
+class DrinkTypeCreate(BaseModel):
+    name: str
+
+
+class DrinkType(DrinkTypeCreate):
+    id: int
+
+    class Config:
+        from_attributes = True  # Allows Pydantic to read SQLAlchemy objects
+
 # --- DRINK SCHEMAS ---
+
+
 class DrinkCreate(BaseModel):
     name: str
     brand: str

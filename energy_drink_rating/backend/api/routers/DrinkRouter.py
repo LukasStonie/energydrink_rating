@@ -2,7 +2,6 @@ import schemas
 from backend.api.dependency import (
     get_db,
 )
-from backend.dataLayer.Models import Drink as DrinkModel
 from crud import DrinkCrud
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -37,13 +36,13 @@ def delete_drink(drink_id: int, db: Session = Depends(get_db)):
 
 
 @router.put("/{drink_id}", response_model=schemas.Drink)
-def update_drink(drink_id: int, drink: schemas.Drink, db: Session = Depends(get_db)):
+def update_drink(drink_id: int, drink: schemas.DrinkCreate, db: Session = Depends(get_db)):
     db_drink = DrinkCrud.get_drink(db=db, drink_id=drink_id)
     if db_drink is None:
         raise HTTPException(status_code=404, detail="Drink not found")
 
     db_drink.name = drink.name
-    db_drink.description = drink.description
+    db_drink.brand = drink.brand
     db_drink.type_id = drink.type_id
 
     db.commit()
