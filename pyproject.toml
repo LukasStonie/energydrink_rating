@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.18.4",
     "fastapi[standard]>=0.123.4",
     "numpy>=2.4.1",
     "psutil>=7.1.3",

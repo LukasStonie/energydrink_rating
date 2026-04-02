@@ -1,6 +1,6 @@
 # Import the classes and Base from your original file
-from backend.DataLayer.DatabaseConnector import DatabaseConnector
-from backend.DataLayer.Models import Comb, Drink, DrinkType, Review, User
+from backend.dataLayer.DatabaseConnector import DatabaseConnector
+from backend.dataLayer.Models import Comb, Drink, DrinkType, Review, User
 from sqlalchemy.orm import sessionmaker
 
 
