@@ -5,6 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "FastAPI: Run App",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "backend.api.app:app", // Path to your app file : variable name
+                "--reload",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000"
+            ],
+            "jinja": true,
+            "cwd": "${workspaceFolder}/energy_drink_rating", // Tells VS Code to run from the backend folder
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/energy_drink_rating",
+            }
+        },
+        {
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",

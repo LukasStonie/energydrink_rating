@@ -1,10 +1,11 @@
-import schemas
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+
+import backend.api.schemas as schemas
+from backend.api.crud import DrinkCrud
 from backend.api.dependency import (
     get_db,
 )
-from crud import DrinkCrud
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
 
 router = APIRouter(prefix="/drinks", tags=["Drinks"])
 
