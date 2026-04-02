@@ -6,8 +6,6 @@ db_connector = DatabaseConnector()
 
 def get_db():
     """FastAPI dependency that uses the Singleton connector."""
-    db = db_connector._SessionLocal()  # Access the factory created in _initialize
-    try:
+    # Delegate session lifecycle management to the connector's public API
+    with db_connector.get_db() as db:
         yield db
-    finally:
-        db.close()

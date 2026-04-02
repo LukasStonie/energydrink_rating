@@ -21,7 +21,9 @@ def create_drink(db: Session, drink: schemas.Drink):
 
 
 def delete_drink(db: Session, drink_id: int):
-    db_obj = db.query(DrinkModel).get(drink_id)
+    db_obj = db.get(DrinkModel, drink_id)
+    if db_obj is None:
+        return None
     db.delete(db_obj)
     db.commit()
     return db_obj

@@ -26,7 +26,9 @@ def create_comb(db: Session, comb: schemas.CombCreate):
 
 
 def delete_comb(db: Session, comb_id: int):
-    db_obj = db.query(CombModel).get(comb_id)
+    db_obj = db.get(CombModel, comb_id)
+    if db_obj is None:
+        return None
     db.delete(db_obj)
     db.commit()
     return db_obj
