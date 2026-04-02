@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 
-from backend.api.routers import CombRouter, DrinkRouter, DrinkTypeRouter
+from backend.api.routers import (
+    CombRouter,
+    DrinkRouter,
+    DrinkTypeRouter,
+    ReviewRouter,
+    UserRouter,
+)
 
 app = FastAPI()
 
@@ -8,6 +14,8 @@ app = FastAPI()
 app.include_router(CombRouter.router)
 app.include_router(DrinkRouter.router)
 app.include_router(DrinkTypeRouter.router)
+app.include_router(ReviewRouter.router)
+app.include_router(UserRouter.router)
 
 
 @app.get("/")
